@@ -45,12 +45,12 @@ is.debinfer_parlist <- function(x){
 deinits <- function(x){
   if (is.debinfer_result(x)){
     is.init <- vapply(x$all.params, function(x) x$var.type, character(1))=="init"
-    inits <- vapply(x$all.params, function(x) x$value, numeric(575))[is.init]
+    inits <- vapply(x$all.params, function(x) x$value, numeric(3))[is.init]
     return(inits)
   } else {
     if (is.debinfer_parlist(x)){
       is.init <- vapply(x, function(x) x$var.type, character(1))=="init"
-      inits <- vapply(x, function(x) x$value, numeric(575))[is.init]
+      inits <- vapply(x, function(x) x$value, numeric(3))[is.init]
       return(inits)
     } else NULL}
 }
