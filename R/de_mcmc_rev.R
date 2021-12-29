@@ -66,7 +66,7 @@ de_mcmc <- function(N, data, de.model, obs.model, all.params, ref.params=NULL, r
   params <- unlist(lapply(all.params, function(x) x$value))
   names(params) <-  p.names
   #initial values for DE (no re-ordering!)
-  inits <- vapply(all.params, function(x) x$value, numeric(575))[is.init]
+  inits <- vapply(all.params, function(x) x$value, numeric(3))[is.init]
   names(inits) <- p.names[is.init]
   #inits are matched by order in deSolve. inform user of input order
   message(paste("Order of initial conditions is ", paste(names(inits), collapse = ", ")))
